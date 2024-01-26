@@ -27,7 +27,7 @@ export default function Result({ fields }) {
               <tr key={i}>
                 <td>{result.year}</td>
                 <td>{formatter.format(result.valueEndOfYear)}</td>
-                <td>{formatter.format(Math.round(result.interest))}</td>
+                <td>{formatter.format(result.interest)}</td>
                 <td>{formatter.format((totalInterest += result.interest))}</td>
                 <td>
                   {formatter.format(
