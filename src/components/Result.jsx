@@ -5,10 +5,6 @@ export default function Result({ fields }) {
 
   let totalInterest = 0;
 
-  const investedCapital = (valueEndOfYear, totalInterest) => {
-    return valueEndOfYear - totalInterest;
-  };
-
   if (!!fields.duration) {
     return (
       <>
@@ -30,9 +26,7 @@ export default function Result({ fields }) {
                 <td>{formatter.format(result.interest)}</td>
                 <td>{formatter.format((totalInterest += result.interest))}</td>
                 <td>
-                  {formatter.format(
-                    investedCapital(result.valueEndOfYear, totalInterest)
-                  )}
+                  {formatter.format(result.valueEndOfYear - totalInterest)}
                 </td>
               </tr>
             ))}
