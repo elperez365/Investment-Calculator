@@ -4,7 +4,7 @@ import { Parameters } from "../util/classes";
 import Result from "./Result";
 
 export default function Body() {
-  const [fields, setFields] = useState(new Parameters(0, 0, 0, 0));
+  const [fields, setFields] = useState(new Parameters(10000, 1200, 6, 10));
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -14,7 +14,7 @@ export default function Body() {
 
   return (
     <>
-      <UserInput handleChange={handleChange} />
+      <UserInput handleChange={handleChange} fields={fields} />
       <Result fields={fields} />
     </>
   );
