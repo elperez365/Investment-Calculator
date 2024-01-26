@@ -8,7 +8,7 @@ export default function Body() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    console.log(event);
+
     setFields((prev) => ({ ...prev, [name]: +value }));
   };
 
